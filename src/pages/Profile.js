@@ -1,5 +1,13 @@
 import React, { useRef, useState } from 'react';
 import '../styles/Profile.css';
+/*
+We don't have profile in the app, only for one self
+
+
+TODO:
++delete bio
+*/
+
 
 const Profile = () => {
   const avatarInputRef = useRef(null);

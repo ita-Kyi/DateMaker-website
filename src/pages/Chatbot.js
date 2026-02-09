@@ -1,6 +1,30 @@
 import React, { useState, useRef, useEffect } from 'react';
 import '../styles/Chatbot.css';
 
+
+
+
+
+/*
+
+THIS IS THE FIRST THING WE GONNA HAVE TO REWRITE, OUR API KEY IS EXPOSED 
+
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 const Chatbot = () => {
   const [messages, setMessages] = useState([
     {
@@ -8,13 +32,7 @@ const Chatbot = () => {
       type: 'bot',
       content: "Built to care, programmed to love",
       timestamp: new Date(),
-    },
-    {
-      id: 2,
-      type: 'bot',
-      content: "• Date ideas and planning\n• Conversation starters\n• Couple preferences\n• Relationship advice\n• Gift suggestions\n\nHow can I help you today?",
-      timestamp: new Date(),
-    },
+    }
   ]);
   const [inputValue, setInputValue] = useState('');
   const [isTyping, setIsTyping] = useState(false);
@@ -28,7 +46,7 @@ const Chatbot = () => {
     scrollToBottom();
   }, [messages]);
 
-  // Simple keyword-based responses for the demo chatbot.
+  // Basic trigger word if the ai is dumb. Middle part between a good answer and error. 
   const getAIResponse = (userMessage) => {
     const lowerMessage = userMessage.toLowerCase();
     
@@ -76,7 +94,7 @@ const Chatbot = () => {
       content: inputValue,
       timestamp: new Date(),
     };
-
+    
     setMessages((prev) => [...prev, userMessage]);
     setInputValue('');
     setIsTyping(true);
@@ -93,6 +111,7 @@ const Chatbot = () => {
     }, 1500);
   };
 
+  
   const handleKeyPress = (e) => {
     if (e.key === 'Enter' && !e.shiftKey) {
       e.preventDefault();

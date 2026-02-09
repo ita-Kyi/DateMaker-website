@@ -29,7 +29,7 @@ const Calendar = () => {
   });
 
 
-  //I can't remember how this was in the app
+  //I can't remember how this was in the app, like the format
   const [plannedDates, setPlannedDates] = useState([
     {
       id: 1,
